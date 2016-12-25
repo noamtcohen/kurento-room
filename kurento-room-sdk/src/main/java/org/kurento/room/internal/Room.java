@@ -118,6 +118,12 @@ public class Room {
     });
 
     log.info("ROOM {}: Added participant {}", name, userName);
+    
+    log.info("Start Recording");
+    this.hubPort = new HubPort.Builder(this.composite).build();
+    this.recorderEndpoint = new RecorderEndpoint.Builder(getPipeline(),"/etc/kurento-room-rec/" + name + "/" + userName + ".webm").withMediaProfile(MediaProfileSpecType.WEBM).build();
+    this.hubPort.connect(this.recorderEndpoint);
+    this.recorderEndpoint.record();
   }
 
   public void newPublisher(Participant participant) {
@@ -310,6 +316,9 @@ public class Room {
           roomHandler.onPipelineError(name, getParticipantIds(), desc);
         }
       });
+      
+      
+      this.composite = new Composite.Builder(getPipeline()).build();
     }
   }
 
