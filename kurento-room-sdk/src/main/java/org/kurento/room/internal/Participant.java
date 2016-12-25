@@ -86,6 +86,10 @@ public class Participant {
         getNewOrExistingSubscriber(other.getName());
       }
     }
+    
+    
+    this.passThru= new PassThrough.Builder(pipeline).build();
+    this.hubPort = new HubPort.Builder(composite).build();
   }
 
   public void createPublishingEndpoint() {
