@@ -55,8 +55,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 
-		<kurento-room.scm.url>https://github.com/Kurento/kurento-room</kurento-room.scm.url>
-		<kurento-room.scm.connection>git@github.com:Kurento/kurento-room.git</kurento-room.scm.connection>
+		<kurento-room.scm.url>https://github.com/noamtcohen/kurento-room.git</kurento-room.scm.url>
+		<kurento-room.scm.connection>git@github.com:noamtcohen/kurento-room.git</kurento-room.scm.connection>
 	</properties>
 
 	<profiles>
